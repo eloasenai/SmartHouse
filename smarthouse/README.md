@@ -1,3 +1,4 @@
+
 🏠 SmartHouse - Sistema de Automação Residencial
 📋 Descrição
 Projeto de automação para controle e monitoramento de três ambientes da casa: Garagem, Sala de Estar e Quarto. Interface web responsiva criada com HTML, CSS e JavaScript para simular e controlar dispositivos conectados.
@@ -64,4 +65,3 @@ Frontend: HTML, CSS e JavaScript para interface e lógica simulada.
 Comunicação: API REST via fetch para envio de comandos ao backend.
 
 Simulação: Sensores simulados para facilitar testes sem hardware real.
-
