@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>SmartHouse</title>
+</head>
+<body>
+    <div class="container">
+
+     
+     <div class="controle"></div>
+     <div>Controle dos Leds</div>
+     <div class="led-controles">
+         <div class="led">
+             <h2>LED 1</h2>
+             <button onclique= "enviarComando('le1','ON')">Ligar</button>
+             <button onclique= "enviarComando('le1','ON')">Desligar</button>
+             
+         </div>
+            <div class="led">
+                <h2>LED 2</h2>
+                <button onclique= "enviarComando('le2','ON')">Ligar</button>
+             <button onclique= "enviarComando('le2','ON')">Desligar</button>
+        
+         </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
