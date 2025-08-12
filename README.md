@@ -1,66 +1,67 @@
-SMARTHOUSE- Sistema de Automação Residencial
-Descrição
-Projeto de automação residencial para controle de três ambientes: garagem, sala de estar e quarto. Desenvolvido com interface web (HTML, CSS, JavaScript) para monitoramento e controle dos dispositivos de cada cômodo.
+🏠 SmartHouse - Sistema de Automação Residencial
+📋 Descrição
+Projeto de automação para controle e monitoramento de três ambientes da casa: Garagem, Sala de Estar e Quarto. Interface web responsiva criada com HTML, CSS e JavaScript para simular e controlar dispositivos conectados.
 
-AMBIENTES E FUNCIONALIDADES
-1. GARAGEM
+🚪 Ambientes e Funcionalidades
+1️⃣ Garagem
 Componentes:
 
-2 Servo Motores (portão basculante e social)
+2 Servo Motores (Portão Basculante e Social)
 
-1 LED (luz da garagem)
+1 LED (Luz da Garagem)
 
-1 Sensor de movimento PIR
-
-FUNCIONALIDADES:
-
-Sensor PIR: detecta movimento e liga a luz da garagem por 5 segundos.
-
-Portão social: ao abrir, acende a luz; após 5 segundos, fecha o portão e apaga a luz.
-
-Portão basculante: ao abrir, liga a luz; ao fechar, desliga a luz.
-
-Dashboard com botões para abrir/fechar portões e interruptor para a luz da garagem.
-
-Exibição de status dos portões e luz.
-
-2. SALA DE ESTA:
-   COMPONENTES
-
-1 LED (luz da sala)
-
-2 Módulos Relé (ar-condicionado e umidificador)
-
-1 Sensor de temperatura e umidade (simulado)
+1 Sensor de Movimento PIR
 
 Funcionalidades:
 
-Exibição clara e estilizada da temperatura (°C) e umidade (%).
+Sensor PIR detecta movimento e acende a luz por 5 segundos.
 
-Controle automático: liga/desliga ar-condicionado e umidificador conforme temperatura e umidade.
+Portão Social: ao abrir, acende a luz; após 5 segundos, fecha o portão e apaga a luz.
+
+Portão Basculante: ao abrir, acende a luz; ao fechar, apaga a luz.
+
+Dashboard com botões para abrir/fechar portões e interruptor da luz.
+
+Exibição em tempo real do status dos portões e da luz.
+
+2️⃣ Sala de Estar
+Componentes:
+
+1 LED (Luz da Sala)
+
+2 Módulos Relé (Ar-condicionado e Umidificador)
+
+Sensor de Temperatura e Umidade (simulado)
+
+Funcionalidades:
+
+Exibição elegante da temperatura (°C) e umidade (%) atualizadas a cada 3 segundos.
+
+Controle automático do ar-condicionado e umidificador conforme condições climáticas.
 
 Controles manuais para luz, ar-condicionado e umidificador.
 
-3. QUARTO
-COMPONENTES
+3️⃣ Quarto
+Componentes:
 
-1 LED (luz do quarto)
+1 LED (Luz do Quarto)
 
-1 Módulo Relé (tomada inteligente)
+1 Módulo Relé (Tomada Inteligente)
 
-1 Motor de Passo Bipolar com driver A4988 (cortina)
+Motor de Passo Bipolar com driver A4988 (Cortina)
 
-FUNCIONALIDADES:
+Funcionalidades:
 
-Controle via web para abrir/fechar cortina acionando o motor por 5 segundos em cada direção.
+Botões para abrir e fechar a cortina com motor acionado por 5 segundos em cada sentido.
 
-Botões para controlar luz do quarto e tomada inteligente.
+Controle da luz do quarto e tomada inteligente via interruptores.
 
-Integração do frontend com backend para envio de comandos REST ao hardware.
+Envio de comandos para backend via API REST para controlar o hardware.
 
-TECNOLOGIAS USADAS 
-HTML, CSS e JavaScript para interface web e lógica de controle simulada.
+🛠️ Tecnologias Utilizadas
+Frontend: HTML, CSS e JavaScript para interface e lógica simulada.
 
-Comunicação via HTTP POST (fetch API) para enviar comandos ao backend (ex: ESP32).
+Comunicação: API REST via fetch para envio de comandos ao backend.
 
-Simulação dos sensores no frontend para testes sem hardware real.
+Simulação: Sensores simulados para facilitar testes sem hardware real.
+
