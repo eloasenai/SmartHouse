@@ -1,0 +1,94 @@
+<style>
+  /* Estilo para sensores da sala */
+  .sensor-box {
+    display: inline-block;
+    width: 150px;
+    padding: 10px 20px;
+    margin: 10px 15px 10px 0;
+    background: #e0f7fa;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: #00796b;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .sensor-box .valor {
+    font-size: 2em;
+    margin-top: 5px;
+  }
+</style>
+
+<!-- Sala (HTML) -->
+<div class="ambiente" id="sala">
+  <h2>Sala de Estar</h2>
+  <label><input type="checkbox" id="luzSalaSwitch" /> Luz da Sala</label>
+  <label><input type="checkbox" id="arCondicionadoSwitch" /> Ar-condicionado</label>
+  <label><input type="checkbox" id="umidificadorSwitch" /> Umidificador</label>
+  <div class="sensor-box">
+    Temperatura<br />
+    <span class="valor" id="tempSala">25</span> °C
+  </div>
+  <div class="sensor-box">
+    Umidade<br />
+    <span class="valor" id="umidadeSala">50</span> %
+  </div>
+</div>
+
+<!-- Quarto (HTML) -->
+<div class="ambiente" id="quarto">
+  <h2>Quarto</h2>
+  <button id="abrirCortinaBtn">Abrir Cortina</button>
+  <button id="fecharCortinaBtn">Fechar Cortina</button>
+  <label><input type="checkbox" id="luzQuartoSwitch" /> Luz do Quarto</label>
+  <label><input type="checkbox" id="tomadaSwitch" /> Tomada Inteligente</label>
+</div>
+
+<script>
+  // Função para enviar comando para backend REST
+  async function enviarComando(url) {
+    try {
+      const response = await fetch(url, { method: 'POST' });
+      if (!response.ok) throw new Error('Erro na requisição');
+      alert('Comando enviado com sucesso!');
+    } catch (error) {
+      alert('Erro ao enviar comando: ' + error.message);
+    }
+  }
+
+  // Controle da cortina
+  document.getElementById('abrirCortinaBtn').addEventListener('click', () => {
+    enviarComando('/abrir-cortina'); // adapte a URL para seu backend real
+  });
+
+  document.getElementById('fecharCortinaBtn').addEventListener('click', () => {
+    enviarComando('/fechar-cortina');
+  });
+
+  // Simulação de atualização temperatura e umidade (mesmo código anterior)
+  let temperaturaSala = 25;
+  let umidadeSala = 50;
+
+  function atualizarSensoresSala() {
+    temperaturaSala += (Math.random() * 2 - 1);
+    temperaturaSala = Math.min(Math.max(temperaturaSala, 15), 35);
+    umidadeSala += (Math.random() * 4 - 2);
+    umidadeSala = Math.min(Math.max(umidadeSala, 10), 90);
+
+    document.getElementById('tempSala').textContent = temperaturaSala.toFixed(1);
+    document.getElementById('umidadeSala').textContent = umidadeSala.toFixed(1);
+
+    // Controle automático ligado ao sensor, opcional
+    if (temperaturaSala >= 28) {
+      document.getElementById('arCondicionadoSwitch').checked = true;
+    } else if (temperaturaSala < 20) {
+      document.getElementById('arCondicionadoSwitch').checked = false;
+    }
+    if (umidadeSala <= 20) {
+      document.getElementById('umidificadorSwitch').checked = true;
+    } else if (umidadeSala >= 80) {
+      document.getElementById('umidificadorSwitch').checked = false;
+    }
+  }
+
+  setInterval(atualizarSensoresSala, 3000);
+</script>
