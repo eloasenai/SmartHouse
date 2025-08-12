@@ -1,9 +1,9 @@
-SmartHouse - Sistema de Automação Residencial
+SMARTHOUSE- Sistema de Automação Residencial
 Descrição
 Projeto de automação residencial para controle de três ambientes: garagem, sala de estar e quarto. Desenvolvido com interface web (HTML, CSS, JavaScript) para monitoramento e controle dos dispositivos de cada cômodo.
 
-Ambientes e Funcionalidades
-1. Garagem
+AMBIENTES E FUNCIONALIDADES
+1. GARAGEM
 Componentes:
 
 2 Servo Motores (portão basculante e social)
@@ -12,7 +12,7 @@ Componentes:
 
 1 Sensor de movimento PIR
 
-Funcionalidades:
+FUNCIONALIDADES:
 
 Sensor PIR: detecta movimento e liga a luz da garagem por 5 segundos.
 
@@ -24,8 +24,8 @@ Dashboard com botões para abrir/fechar portões e interruptor para a luz da gar
 
 Exibição de status dos portões e luz.
 
-2. Sala de Estar
-Componentes:
+2. SALA DE ESTA:
+   COMPONENTES
 
 1 LED (luz da sala)
 
@@ -41,8 +41,8 @@ Controle automático: liga/desliga ar-condicionado e umidificador conforme tempe
 
 Controles manuais para luz, ar-condicionado e umidificador.
 
-3. Quarto
-Componentes:
+3. QUARTO
+COMPONENTES
 
 1 LED (luz do quarto)
 
@@ -50,7 +50,7 @@ Componentes:
 
 1 Motor de Passo Bipolar com driver A4988 (cortina)
 
-Funcionalidades:
+FUNCIONALIDADES:
 
 Controle via web para abrir/fechar cortina acionando o motor por 5 segundos em cada direção.
 
@@ -58,7 +58,7 @@ Botões para controlar luz do quarto e tomada inteligente.
 
 Integração do frontend com backend para envio de comandos REST ao hardware.
 
-Tecnologias Utilizadas
+TECNOLOGIAS USADAS 
 HTML, CSS e JavaScript para interface web e lógica de controle simulada.
 
 Comunicação via HTTP POST (fetch API) para enviar comandos ao backend (ex: ESP32).
